@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.python-version
+
+# uv
+uv.lock
+
+# dbt
+target/
+dbt_packages/
+logs/
+*.duckdb
+*.duckdb.wal
+
+# Data
+data/raw/
+*.csv
+
+# Env / secrets
+.env
+.env.*
+~/.dbt/profiles.yml
+
+# OS
+.DS_Store

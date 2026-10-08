@@ -1,0 +1,33 @@
+WITH source AS (
+    SELECT
+        *
+    FROM
+        {{ ref("stg_vehicle_park") }}
+)
+SELECT
+    id,
+    ingestion_month,
+    marke,
+    komercinis_pav,
+    vairas_desineje,
+    kategorija_klase,
+    keb_pavadinimas,
+    nuosava_mase,
+    darbinis_turis,
+    galia,
+    degalai,
+    spalva,
+    maks_greitis,
+    sedimu_vietu_sk,
+    rida,
+    pirm_reg_data,
+    pirm_reg_data_lt,
+    paskutines_reg_data,
+    kilmes_salis,
+    vald_tipas,
+    vald_gim_dat_int,
+    dae_statusas,
+    savivaldybe,
+    apskritis
+FROM
+    source

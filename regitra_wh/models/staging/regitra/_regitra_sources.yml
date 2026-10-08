@@ -1,0 +1,236 @@
+version: 2
+
+sources:
+  - name: regitra_raw
+    database: dev
+    schema: main
+    tables:
+      - name: raw_park_data
+        description: "Raw vehicle park data, loaded from Atviri_TP_parko_duomenys.csv"
+        columns:
+          - name: marke
+            data_type: varchar
+            description: |
+              Gamybinė markė (gamintojo prekės pavadinimas) 
+              (kai VALD_TIPAS - "Fizinis" ir MARKE+KOMERCINIS_PAV+SAVIVALDYBE=1,
+              tomet vietoje "Gamybinė markė" yra nurodoma "Nuasmeninta",
+              atsižvelgiant į asmens duomenų apsaugą)
+  
+          - name: komercinis_pav
+            data_type: varchar
+            description: |
+              Komercinis pavadinimas (kai VALD_TIPAS - "Fizinis" ir MARKE+KOMERCINIS_PAV+SAVIVALDYBE=1, tomet vietoje "Komercinis pavadinimas" yra nurodoma "Nuasmeninta", atsižvelgiant į asmens duomenų apsaugą)
+          - name: gamintojo_pav
+            data_type: varchar
+            description: ""
+          - name: gamintojo_pav_baz
+            data_type: varchar
+            description: ""
+          - name: tipas
+            data_type: varchar
+            description: ""
+          - name: variantas
+            data_type: varchar
+            description: ""
+          - name: versija
+            data_type: varchar
+            description: ""
+          - name: es_tipo_patvirtinimo_nr
+            data_type: varchar
+            description: ""
+          - name: nac_tipo_patvirtinimo_nr
+            data_type: varchar
+            description: ""
+          - name: individual_patvirtinimo_nr
+            data_type: varchar
+            description: ""
+          - name: interpoliacija
+            data_type: varchar
+            description: ""
+          - name: uzbaigtumo_pakopa
+            data_type: varchar
+            description: ""
+          - name: vairas_desineje
+            data_type: varchar
+            description: ""
+          - name: kategorija_pilnai
+            data_type: varchar
+            description: ""
+          - name: kategorija_klase
+            data_type: varchar
+            description: ""
+          - name: keb_kodas
+            data_type: varchar
+            description: ""
+          - name: keb_pavadinimas
+            data_type: varchar
+            description: ""
+          - name: spec_kodas
+            data_type: varchar
+            description: ""
+          - name: spec_pavadinimas
+            data_type: varchar
+            description: ""
+          - name: keb_kodas_es
+            data_type: varchar
+            description: ""
+          - name: nuosava_mase
+            data_type: double
+            description: |
+              Parengtos eksploatuoti transporto priemonės masė
+          - name: nuosava_mase_baz
+            data_type: bigint
+            description: ""
+          - name: maks_mase
+            data_type: varchar
+            description: ""
+          - name: maks_mase_f2
+            data_type: bigint
+            description: ""
+          - name: maks_mase_f5
+            data_type: bigint
+            description: ""
+          - name: bandomoji_mase
+            data_type: bigint
+            description: ""
+          - name: darbinis_turis
+            data_type: double
+            description: |
+              Variklio darbinis tūris cm³
+          - name: galia
+            data_type: double
+            description: |
+              Didžiausia naudingoji galia kW
+          - name: sukiu_sk
+            data_type: double
+            description: ""
+          - name: galia_elektr
+            data_type: double
+            description: ""
+          - name: degalai
+            data_type: varchar
+            description: |
+              Degalų tipas arba galios šaltinis
+          - name: degalu_rezimas
+            data_type: varchar
+            description: ""
+          - name: elektrine_tp
+            data_type: varchar
+            description: |
+              Elektrinė transporto priemonė (Y - taip / N - ne / "Tuščia reikšmė" - nėra duomenų)
+          - name: hibridines_tp_kategorija
+            data_type: varchar
+            description: ""
+          - name: pavaru_dezes_tipas
+            data_type: varchar
+            description: ""
+          - name: co2_kiekis
+            data_type: bigint
+            description: ""
+          - name: co2_kiekis_wltp
+            data_type: double
+            description: ""
+          - name: eko_naujoves_kodas
+            data_type: varchar
+            description: ""
+          - name: co2_sumazejimas_nedc
+            data_type: double
+            description: ""
+          - name: co2_sumazejimas_wltp
+            data_type: double
+            description: ""
+          - name: elektr_energ_sanaud_nedc
+            data_type: double
+            description: ""
+          - name: elektr_energ_sanaud_wltp_e
+            data_type: double
+            description: ""
+          - name: elektr_energ_sanaud_wltp_h
+            data_type: double
+            description: ""
+          - name: elektrine_rida_nedc
+            data_type: double
+            description: ""
+          - name: elektrine_rida_wltp_e
+            data_type: double
+            description: ""
+          - name: elektrine_rida_wltp_h
+            data_type: double
+            description: ""
+          - name: tersalu_lygis
+            data_type: varchar
+            description: ""
+          - name: tersalu_norm_akto_nr
+            data_type: varchar
+            description: ""
+          - name: ratu_baze
+            data_type: bigint
+            description: ""
+          - name: tv_plotis1
+            data_type: bigint
+            description: ""
+          - name: tv_plotis2
+            data_type: bigint
+            description: ""
+          - name: spalva
+            data_type: varchar
+            description: |
+              Spalva
+          - name: galios_mases_sant
+            data_type: double
+            description: ""
+          - name: maks_greitis
+            data_type: bigint
+            description: |
+              Didžiausias leidžiamas greitis
+          - name: sedimu_vietu_sk
+            data_type: varchar
+            description: ""
+          - name: stovimu_vietu_sk
+            data_type: varchar
+            description: ""
+          - name: gamybos_metai
+            data_type: bigint
+            description: |
+              Gamybos metai
+          - name: modelio_metai
+            data_type: bigint
+            description: ""
+          - name: rida
+            data_type: bigint
+            description: |
+              Rida (užfiksuota transporto priemonės registravimo metu)
+          - name: pirm_reg_data
+            data_type: date
+            description: |
+              Pirmosios registracijos data
+          - name: pirm_reg_data_lt
+            data_type: date
+            description: ""
+          - name: galiojimo_laik
+            data_type: date
+            description: ""
+          - name: paskutines_reg_data
+            data_type: date
+            description: ""
+          - name: dae_statusas
+            data_type: varchar
+            description: "Dalyvavimo viešajame eisme statusas (T- leidžiamas / N - draudžiamas)"
+          - name: kilmes_salis
+            data_type: varchar
+            description: ""
+          - name: vald_tipas
+            data_type: varchar
+            description: |
+              Valdytojo tipas (Fizinis / Juridinis)
+          - name: vald_gim_dat_int
+            data_type: varchar
+            description: ""
+          - name: savivaldybe
+            data_type: varchar
+            description: |
+              Savivaldybė (pagal valdytojo registracijos adresą)
+          - name: apskritis
+            data_type: varchar
+            description: |
+              Apskritis (pagal valdytojo registracijos adresą)
